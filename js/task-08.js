@@ -1,22 +1,26 @@
-const form = document.querySelector(".login-form")
+const form = document.querySelector(".login-form");
 const emailInput = document.querySelector('[type = "email"]');
 const passwordInput = document.querySelector('[type = "password"]');
 form.addEventListener("submit", login);
 
 function login(e) {
   e.preventDefault();
-  const formData = new FormData(form);
   let obj = {};
+  const emailValue = form.elements.email.value;
+  const emailNameOfValue = form.email.name;
+  const passwordValue = form.elements.password.value;
+  const passwordNameOfValue = form.password.name;
 
-  for (let arr of formData) {
-    let value = arr[1];
-    const nameOfValue = arr[0];
-    if (value === "") {
-      alert(`Your ${nameOfValue} input is empty`);
-    } else {
-      obj[nameOfValue] = value;
-    }
+  if (emailValue === "") {
+    alert(`Your ${emailNameOfValue} input is empty`);
+  } else if (passwordValue === "") {
+    alert(`Your ${passwordNameOfValue} input is empty`);
+  } else {
+    obj[emailNameOfValue] = emailValue;
+    obj[passwordNameOfValue] = passwordValue;
   }
-  console.log(obj);
-  form.reset();
+  if (emailInput.value !== "" && passwordInput.value !== "") {
+    console.log(obj);
+    form.reset();
+  }
 }

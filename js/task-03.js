@@ -14,7 +14,7 @@ const images = [
 ];
 
 const makeGallery = ({ url, alt }) => {
-  return `<li class="item"><img class="image" src= "${url}", alt="${alt}" width="350" height="200"></li>`;
+  return `<li class="item"><img class="image" src= "${url}" alt="${alt}" width="350" height="200"></li>`;
 };
 
 const gallary = images.map(makeGallery).join(" ");

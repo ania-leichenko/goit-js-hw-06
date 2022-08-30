@@ -4,7 +4,7 @@ console.log(
   }`
 );
 const categoriesArray = [...document.querySelectorAll(".item")]
-  .map(
+  .forEach(
     (categories) => `Categories: ${categories.children[0].textContent}
      Количество элементов: ${categories.children[1].children.length}`
   )

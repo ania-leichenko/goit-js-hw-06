@@ -8,12 +8,13 @@ function getAmount() {
   const amount = +document.querySelector("#controls input").value;
   createBoxes(amount);
 }
-
+const basicSize = 30;
+let size = basicSize;
 function createBoxes(amount) {
-  const basicSize = 30;
-  const fragment = document.createDocumentFragment();
-  for (let i = 0; i < amount; i++) {
-    const size = basicSize + i * 10;
+  
+  let fragment = document.createDocumentFragment();
+  for (let i = 1; i <= amount; i++) {
+    size +=  i * 10;
     const div = document.createElement("div");
     div.style.cssText = `width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()}`;
     fragment.appendChild(div);
