@@ -3,10 +3,8 @@ console.log(
     document.getElementById("categories").getElementsByTagName("h2").length
   }`
 );
-const categoriesArray = [...document.querySelectorAll(".item")]
-  .forEach(
-    (categories) => `Categories: ${categories.children[0].textContent}
-     Количество элементов: ${categories.children[1].children.length}`
-  )
-  .join("\n");
-console.log(categoriesArray);
+const categoriesArray = document.querySelectorAll(".item");
+categoriesArray.forEach((categories) => {
+  console.log(`Category: ${categories.firstElementChild.textContent}`);
+  console.log(`Elements: ${categories.lastElementChild.children.length}`);
+});

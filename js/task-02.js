@@ -9,14 +9,9 @@ const ingredients = [
 
 const ulList = document.getElementById("ingredients");
 
-function createElement(ingredients) {
-  let itemsArr = [];
-  ingredients.map((ingredient) => {
-    const liItem = document.createElement("li");
-    liItem.textContent = ingredient;
-    itemsArr.push(liItem);
-  });
-  return ulList.prepend(...itemsArr);
-}
-
-createElement(ingredients);
+const itemsArr = ingredients.map((ingredient) => {
+  const liItem = document.createElement("li");
+  liItem.textContent = ingredient;
+  return liItem;
+});
+ulList.append(...itemsArr);
